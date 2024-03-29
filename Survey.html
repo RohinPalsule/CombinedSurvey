@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>
+		Combined CCNL Survey List 
+	</title>
+
+	<style>
+		/* Styling the Body element 
+		i.e. Color, Font, Alignment */
+		body {
+			background-color: #9a8fff;
+			font-family: Verdana;
+			text-align: center;
+		}
+
+		/* Styling the Form (Color, Padding, Shadow) */
+		form {
+			background-color: #fff;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		/* Styling form-control Class */
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+		/* Styling form-control Label */
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		/* Styling form-control input, 
+		select, textarea */
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+
+		/* Styling form-control Radio 
+		button and Checkbox */
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+
+        .tab{
+            display:none
+        }
+
+		/* Styling Button */
+		button {
+			background-color: #05c46b;
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+			display: block;
+			width: 30%;
+			margin-top: 50px;
+			margin-bottom: 20px;
+            margin-left: 20px;
+            float: right
+		}
+
+       .Next {
+            display: block
+        }
+
+        .ThankYou {
+            display: none
+        }
+	</style>
+</head>
+
+<body>
+
+	<!-- Create Form -->
+	<form id="form">
+        <div class = "tab"><h1>Combined Survey Form</h1>
+            </style>
+            <div class="form-control">
+                <label for="age" id="label-age">
+                    Age
+                </label>
+
+                <!-- Input Type Text -->
+                <input type="text" id="age"
+                    placeholder="Enter your age" />
+            </div>
+
+            <div class="form-control">
+                <label for="role" id="label-role">
+                    Education Level?
+                </label>
+
+                <!-- Dropdown options -->
+                <select name="role" id="role">
+                    <option value="No Highschool Degree">No Highschool Degree</option>
+                    <option value="Associates Degree">Associates Degree</option>
+                    <option value="Some college">
+                        Some college
+                    </option>
+                    <option value="College Degree">College Degree</option>
+                    <option value="Graduate Degree">Graduate Degree</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label>Surveys to take
+                    <small>(Check all that apply)</small>
+                </label>
+                <!-- Input Type Checkbox -->
+                <label for="inp-1">
+                    <input type="checkbox" name="inp">SCL-90
+                    </input>
+                </label>
+                <label for="inp-2">
+                    <input type="checkbox" name="inp">SPSRQ
+                    </input>
+                </label>
+                <label for="inp-3">
+                    <input type="checkbox" name="inp">MFQ
+                    </input>
+                </label>
+                <label for="inp-4">
+                    <input type="checkbox" name="inp">AUDIT
+                    </input>
+                </label>
+                <label for="inp-5">
+                    <input type="checkbox" name="inp">QUIC
+                    </input>
+                </label>
+                <label for="inp-6">
+                    <input type="checkbox" name="inp">CTQ
+                    </input>
+                </label>
+                <label for="inp-7">
+                    <input type="checkbox" name="inp">Nicotene
+                    </input>
+                </label>
+            
+            </div>
+        </div>
+
+        <!-- This is the first tab deparated by a new div class; All page div classes should be "tab" -->
+
+        <div class = "tab" id="SCL90ID"> <h1>SCL-90 Form</h1>
+
+            <p> Below is a list of problems and complaints that people sometimes have. 
+                Please read each one carefully. After you have done so, select one of 
+                the numbered descriptors that best describes <strong> HOW MUCH THAT 
+                PROBLEM HAS BOTHERED OR DISTRESSED YOU DURING THE PAST WEEK, INCLUDING 
+                TODAY. </strong> Circle the number in the space to the right of he problem and do 
+                not skip any items.
+            </p>
+            <p></p>
+            <h2>How much were you bothered by: </h2>
+            <hr />
+            <p></p>
+
+        </div>
+
+        <!-- All the questions on each page is covered in the script just put a unique ID to call it -->
+
+        <div class="tab" id="SPSRQID"> <h1>SPSRQ Form</h1> 
+            <p> In this survey you will be prompted to
+                answer a series of questions with <strong>yes</strong> or 
+                <strong>no</strong>. Please answer every question.
+            </p>
+            <hr  />
+        </div>
+
+
+        <!-- MFQ is different because it has different <p> questions which we need to compile (see MFQ.js) -->
+        <div class="tab" id="MFQID"> <h1>MFQ Form</h1> 
+            <p> In this survey you will be prompted to
+                answer a series of questions regarding how you remember infromation.
+                Choose a number between <strong>1 and 7</strong> that best reflects your judgement about
+                your memory. Please answer every question.</p>
+            <p><strong>major problems some minor problems no problems</strong></p>
+            <p style = "word-spacing: 50px">1 2 3 4 5 6 7</p>
+            <p></p>
+            <hr  />
+        </div>
+
+        <!-- Using a diff div class ID for thank you but probably not necesary -->
+        <div class = "ThankYou">
+            <h1> Thank you for your participation!</h1>
+            <h3>Please let the researcher know you have completed the surveys </h3>
+        </div>
+
+		<!-- This is the HTML for the button ; the nextPrev() is the function called in the script -->
+        <div class = "Next" style = "overflow:auto;" style = "float:right;">
+                <button type="button" id="nextBtn" value="next" onclick="nextPrev()">
+                    Next
+                </button>
+            </div>
+        </div>
+	</form>
+
+    <!-- That concludes the form ; now it is the scripts which are in JS -->
+
+    <!-- These first scripts call the JS files that contain the questions for each form 
+        At some point we could probably make the script its own JS file for clarity -->
+
+    <script src="SCL90.js"></script>
+    <script src="SPSRQ.js"></script>
+    <script src="MFQ.js"></script>
+    <script>
+    
+        // Generate HTML for each question
+
+        // This is where the questions are generated ; the question names are in js and the
+        // answer choices are written inside the function ; all that needs to be changed per
+        // form is the Matrix name (acc to how it is in the JS) and the element ID it is calling
+
+        SCL90QuestionsMatrix.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="SCLQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-0" name="choice">0</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-1" name="choice">1</input>
+                    </label>
+                    <label for="choice-2">
+                        <input type="radio" id="choice-2" name="choice">2</input>
+                    </label>
+                    <label for="choice-3">
+                        <input type="radio" id="choice-3" name="choice">3</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">4</input>
+                    </label>
+                </div>
+            `;
+            document.getElementById('SCL90ID').innerHTML += questionHTML;
+        });
+
+        SPSRQQuestionsMatrix.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="SPSRQQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-yes" name="choice">yes</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-no" name="choice">no</input>
+                </div>
+            `;
+            document.getElementById('SPSRQID').innerHTML += questionHTML;
+        });
+
+        MFQQuestionsMatrix1.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="MFQQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-0" name="choice">1</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-1" name="choice">2</input>
+                    </label>
+                    <label for="choice-2">
+                        <input type="radio" id="choice-2" name="choice">3</input>
+                    </label>
+                    <label for="choice-3">
+                        <input type="radio" id="choice-3" name="choice">4</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">5</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">6</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">7</input>
+                    </label>
+                </div>
+            `;
+            document.getElementById('MFQID').innerHTML += questionHTML;
+        });
+
+    </script>
+    <script>
+
+        // Set current tab to keep track of where the user is
+        var currentTab = 0
+
+        // Function that is identified below ; called to show present tab
+        showTab(currentTab);
+
+        // Initially was supposed to be for every tab but right now this is just
+        // showing the first tab hence the [0]
+
+        function showTab(n) {
+            var x = document.getElementsByClassName("tab")
+            x[0].style.display = "block"
+        }
+
+
+        // This is where things get complicated but essentially is programming the next button
+        function nextPrev() {
+            var x = document.getElementsByClassName("tab");
+
+            // Remove current tab when calling next
+            x[currentTab].style.display = "none";
+            
+            // Creating a variable with all the experiment checkboxes
+            var ele = document.getElementsByName('inp');
+
+            // This is the main loop that needs to be looked at
+            for (i=0;i<ele.length;i++) {
+                
+                if (ele[currentTab + i].checked) {
+                    currentTab = currentTab + i + 1
+                    x[currentTab].style.display = "block"; 
+                    window.scrollTo(0,0)
+                } 
+                else if (i == ele.length - 1 && ele[ele.length-1].checked == false) {
+                    document.getElementsByClassName("ThankYou")[0].style.display = "block"
+                    document.getElementsByClassName("Next")[0].style.display="none"
+                }
+            
+            } 
+            
+        }
+
+    </script>
+</body>
+
+
+
+</html>
