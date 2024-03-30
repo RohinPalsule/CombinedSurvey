@@ -116,9 +116,7 @@
                 <select name="role" id="role">
                     <option value="No Highschool Degree">No Highschool Degree</option>
                     <option value="Associates Degree">Associates Degree</option>
-                    <option value="Some college">
-                        Some college
-                    </option>
+                    <option value="Some college">Some college</option>
                     <option value="College Degree">College Degree</option>
                     <option value="Graduate Degree">Graduate Degree</option>
                 </select>
@@ -336,20 +334,30 @@
             var ele = document.getElementsByName('inp');
 
             // This is the main loop that needs to be looked at
-            for (i=0;i<ele.length;i++) {
+            for (i=0;i<ele.length-currentTab;i++) {
                 
                 if (ele[currentTab + i].checked) {
                     currentTab = currentTab + i + 1
                     x[currentTab].style.display = "block"; 
                     window.scrollTo(0,0)
+                    break;
                 } 
-                else if (i == ele.length - 1 && ele[ele.length-1].checked == false) {
-                    document.getElementsByClassName("ThankYou")[0].style.display = "block"
-                    document.getElementsByClassName("Next")[0].style.display="none"
-                }
             
             } 
             
+            // This portion is to see if any tab is checked ; if not then shows Thank You portion
+            var allDisplayedNone = true;
+            for (var i = 0; i < x.length; i++) {
+                if (x[i].style.display == "block"){
+                    allDisplayedNone = false;
+                    break;
+                }
+            }
+            
+            if (allDisplayedNone) {
+                document.getElementsByClassName("ThankYou")[0].style.display = "block"
+                document.getElementsByClassName("Next")[0].style.display="none"
+            }
         }
 
     </script>
