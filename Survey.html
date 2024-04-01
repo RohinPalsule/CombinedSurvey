@@ -194,9 +194,6 @@
                 answer a series of questions regarding how you remember infromation.
                 Choose a number between <strong>1 and 7</strong> that best reflects your judgement about
                 your memory. Please answer every question.</p>
-            <p><strong>major problems some minor problems no problems</strong></p>
-            <p style = "word-spacing: 50px">1 2 3 4 5 6 7</p>
-            <p></p>
             <hr  />
         </div>
 
@@ -273,6 +270,12 @@
             document.getElementById('SPSRQID').innerHTML += questionHTML;
         });
 
+        var MFQprompt1HTML = 
+            `<h3>How often do these present a problem to you?</h3><p> </p>
+            <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
+            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+        document.getElementById('MFQID').innerHTML += MFQprompt1HTML
+
         MFQQuestionsMatrix1.forEach(function(question, index) {
             var questionHTML = `
                 <div class="form-control">
@@ -305,6 +308,241 @@
             document.getElementById('MFQID').innerHTML += questionHTML;
         });
 
+        var MFQprompt2HTML = 
+            `<hr />
+            <h3>As you are reading a novel, how often do you have trouble remembering what you have read...</h3><p> </p>
+            <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
+            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />
+            `
+        document.getElementById('MFQID').innerHTML += MFQprompt2HTML
+
+        MFQQuestionsMatrix2.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="MFQQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-0" name="choice">1</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-1" name="choice">2</input>
+                    </label>
+                    <label for="choice-2">
+                        <input type="radio" id="choice-2" name="choice">3</input>
+                    </label>
+                    <label for="choice-3">
+                        <input type="radio" id="choice-3" name="choice">4</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">5</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">6</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">7</input>
+                    </label>
+                </div>
+            `;
+            document.getElementById('MFQID').innerHTML += questionHTML;
+        });
+
+        var MFQprompt3HTML = 
+            `<hr /><h3>When you are reading a newspaper or magazine article, 
+            how often do you have trouble remembering what you have read...</h3><p> </p>
+            <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
+            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+        document.getElementById('MFQID').innerHTML += MFQprompt3HTML
+
+        MFQQuestionsMatrix3.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="MFQQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-0" name="choice">1</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-1" name="choice">2</input>
+                    </label>
+                    <label for="choice-2">
+                        <input type="radio" id="choice-2" name="choice">3</input>
+                    </label>
+                    <label for="choice-3">
+                        <input type="radio" id="choice-3" name="choice">4</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">5</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">6</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">7</input>
+                    </label>
+                </div>
+            `;
+            document.getElementById('MFQID').innerHTML += questionHTML;
+        });
+
+        var MFQprompt4HTML = 
+            `<hr /><h3>How well do you remember things that occurred...</h3><p> </p>
+            <p style = "word-spacing: 30px"><strong>very bad fair very good</strong></p>
+            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+        document.getElementById('MFQID').innerHTML += MFQprompt4HTML
+
+        MFQQuestionsMatrix4.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="MFQQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-0" name="choice">1</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-1" name="choice">2</input>
+                    </label>
+                    <label for="choice-2">
+                        <input type="radio" id="choice-2" name="choice">3</input>
+                    </label>
+                    <label for="choice-3">
+                        <input type="radio" id="choice-3" name="choice">4</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">5</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">6</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">7</input>
+                    </label>
+                </div>
+            `;
+            document.getElementById('MFQID').innerHTML += questionHTML;
+        });
+
+        var MFQprompt5HTML = 
+            `<hr /><h3>How often do these present a problem to you?</h3><p> </p>
+            <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
+            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+        document.getElementById('MFQID').innerHTML += MFQprompt5HTML
+
+
+        MFQQuestionsMatrix5.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="MFQQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-0" name="choice">1</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-1" name="choice">2</input>
+                    </label>
+                    <label for="choice-2">
+                        <input type="radio" id="choice-2" name="choice">3</input>
+                    </label>
+                    <label for="choice-3">
+                        <input type="radio" id="choice-3" name="choice">4</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">5</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">6</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">7</input>
+                    </label>
+                </div>
+            `;
+            document.getElementById('MFQID').innerHTML += questionHTML;
+        });
+
+
+        var MFQprompt6HTML = 
+            `<hr /><h3>How is your memory compared to the way it was...</h3><p> </p>
+            <p style = "word-spacing: 40px"><strong>much worse same much better</strong></p>
+            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+        document.getElementById('MFQID').innerHTML += MFQprompt6HTML
+
+
+        MFQQuestionsMatrix6.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="MFQQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-0" name="choice">1</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-1" name="choice">2</input>
+                    </label>
+                    <label for="choice-2">
+                        <input type="radio" id="choice-2" name="choice">3</input>
+                    </label>
+                    <label for="choice-3">
+                        <input type="radio" id="choice-3" name="choice">4</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">5</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">6</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">7</input>
+                    </label>
+                </div>
+            `;
+            document.getElementById('MFQID').innerHTML += questionHTML;
+        });
+
+
+        var MFQprompt7HTML = 
+            `<hr /><h3>How often do you use these techniques to remind yourself about things?</h3><p> </p>
+            <p style = "word-spacing: 80px"><strong>always sometimes never</strong></p>
+            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+        document.getElementById('MFQID').innerHTML += MFQprompt7HTML
+
+
+        MFQQuestionsMatrix7.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="MFQQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-0" name="choice">1</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-1" name="choice">2</input>
+                    </label>
+                    <label for="choice-2">
+                        <input type="radio" id="choice-2" name="choice">3</input>
+                    </label>
+                    <label for="choice-3">
+                        <input type="radio" id="choice-3" name="choice">4</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">5</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">6</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">7</input>
+                    </label>
+                </div>
+            `;
+            document.getElementById('MFQID').innerHTML += questionHTML;
+        });
     </script>
     <script>
 
