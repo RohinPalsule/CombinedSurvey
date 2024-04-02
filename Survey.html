@@ -144,16 +144,15 @@
                     </input>
                 </label>
                 <label for="inp-5">
-                    <input type="checkbox" name="inp">QUIC
-                    </input>
-                </label>
-                <label for="inp-6">
                     <input type="checkbox" name="inp">CTQ
                     </input>
                 </label>
-                <label for="inp-7">
-                    <input type="checkbox" name="inp">Nicotene
+                <label for="inp-6">
+                    <input type="checkbox" name="inp">QUIC
                     </input>
+                </label>
+                <label for="inp-7">
+                    <input type="checkbox" name="inp">HONC
                 </label>
             
             </div>
@@ -194,7 +193,36 @@
                 answer a series of questions regarding how you remember infromation.
                 Choose a number between <strong>1 and 7</strong> that best reflects your judgement about
                 your memory. Please answer every question.</p>
+            <p></p>
             <hr  />
+        </div>
+
+        <div class="tab" id="AUDITID"> <h1>AUDIT Form</h1>
+            <p> In this survey you will be prompted to answer a series of questions 
+                related to your <strong>alcohol usage</strong> and <strong>subsequent behavior</strong> 
+                while under the influence. Please answer every question. </p>
+        
+        </div>
+
+        <div class="tab" id="CTQID"> <h1>CTQ Form</h1>
+            <p> In this survey you will be prompted to answer a series of questions regarding your experiences during 
+                childhood including <strong>childhood trauma</strong>. Please answer every question </p><hr /> <p></p>
+
+        </div>
+
+        <div class="tab" id="QUICID"> <h1>QUIC Form</h1>
+            <p> This set of questions asks about your <strong>childhood experiences</strong>. When we say parents, we mean
+                whoever in your life fills that role for you (e.g. biological parents, step parents, grandparents, foster
+                parents). This could be one person, or this could be multiple people.</p>
+            <p><strong>Please answer these questions based on your typical or average experiences.</strong></p><hr />
+            <h3> Typical or average experiences from earliest memory to age 12...</h3><hr />
+
+        </div>
+
+        <div class="tab" id="HONCID"> <h1>HONC Form</h1>
+            <p> In this survey you will be prompted to answer a series of questions regarding your experiences with 
+                <strong>Nicotene</strong>. Please answer every question </p><hr /> <p></p>
+
         </div>
 
         <!-- Using a diff div class ID for thank you but probably not necesary -->
@@ -220,6 +248,10 @@
     <script src="SCL90.js"></script>
     <script src="SPSRQ.js"></script>
     <script src="MFQ.js"></script>
+    <script src="AUDIT.js"></script>
+    <script src="CTQ.js"></script>
+    <script src="QUIC.js"></script>
+    <script src="HONC.js"></script>
     <script>
     
         // Generate HTML for each question
@@ -543,6 +575,173 @@
             `;
             document.getElementById('MFQID').innerHTML += questionHTML;
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            AUDITQuestionsMatrix.forEach(function(questionObj, index) {
+                var questionHTML = `
+                    <div class="form-control">
+                        <label id="AUDITQuestions${index}">
+                            ${questionObj.question}
+                        </label>`;
+                questionObj.choices.forEach(function(choice, choiceIndex) {
+                    questionHTML += `
+                        <label for="choice-${index}-${choiceIndex}">
+                            <input type="radio" id="choice-${index}-${choiceIndex}" name="answer${index}" value="${choice}">${choice}</input>
+                        </label>`;
+                });
+                questionHTML += `
+                    </div>`; 
+                document.getElementById('AUDITID').innerHTML += questionHTML; 
+            });
+        });
+
+        CTQQuestionsMatrix.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control"> 
+                    <label id="CTQQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-0" name="choice">(1) Never True</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-1" name="choice">(2) Rarely True</input>
+                    </label>
+                    <label for="choice-2">
+                        <input type="radio" id="choice-2" name="choice">(3)S ometimes True</input>
+                    </label>
+                    <label for="choice-3">
+                        <input type="radio" id="choice-3" name="choice">(4) Often True</input>
+                    </label>
+                    <label for="choice-4">
+                        <input type="radio" id="choice-4" name="choice">(5) Very Often True</input>
+                    </label>
+                </div>
+            `;
+            document.getElementById('CTQID').innerHTML += questionHTML;
+        });
+
+        QUICQuestionsMatrix1.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="QUICQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-yes" name="choice">yes</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-no" name="choice">no</input>
+                </div>
+            `;
+            document.getElementById('QUICID').innerHTML += questionHTML;
+        });
+
+        var QUICprompt2HTML = 
+            `<hr /><h3>Typical or average experiences from earliest memory to age 18...</h3><p> </p> <hr />`
+        document.getElementById('QUICID').innerHTML += QUICprompt2HTML
+
+        QUICQuestionsMatrix2.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="QUICQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-yes" name="choice">yes</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-no" name="choice">no</input>
+                </div>
+            `;
+            document.getElementById('QUICID').innerHTML += questionHTML;
+        });
+
+        QUICQuestionsMatrix3.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="QUICQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-yes" name="choice">yes</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-no" name="choice">no</input>
+                </div>
+            `;
+            document.getElementById('QUICID').innerHTML += questionHTML;
+        });
+
+        QUICQuestionsMatrix4.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="QUICQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-yes" name="choice">yes</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-no" name="choice">no</input>
+                </div>
+            `;
+            document.getElementById('QUICID').innerHTML += questionHTML;
+        });
+
+        QUICQuestionsMatrix5.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="QUICQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-yes" name="choice">yes</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-no" name="choice">no</input>
+                </div>
+            `;
+            document.getElementById('QUICID').innerHTML += questionHTML;
+        });
+
+        HONCQuestionsMatrix1.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="HONCQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-yes" name="choice">yes</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-no" name="choice">no</input>
+                </div>
+            `;
+            document.getElementById('HONCID').innerHTML += questionHTML;
+        });
+
+        var HONCquestionHTML = `
+            <hr /><h3>When you tried to stop smoking... (or, when you haven't used tobacco for a while...)</h3> <hr />
+            `
+        document.getElementById('HONCID').innerHTML += HONCquestionHTML;
+
+        HONCQuestionsMatrix2.forEach(function(question, index) {
+            var questionHTML = `
+                <div class="form-control">
+                    <label id="HONCQuestions${index}">
+                        ${question}
+                    </label>
+                    <label for="choice-0">
+                        <input type="radio" id="choice-yes" name="choice">yes</input>
+                    </label>
+                    <label for="choice-1">
+                        <input type="radio" id="choice-no" name="choice">no</input>
+                </div>
+                `;
+            document.getElementById('HONCID').innerHTML += questionHTML;
+        });
+
     </script>
     <script>
 
@@ -600,7 +799,6 @@
 
     </script>
 </body>
-
 
 
 </html>
