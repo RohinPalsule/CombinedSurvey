@@ -262,24 +262,24 @@
 
         SCL90QuestionsMatrix.forEach(function(question, index) {
             var questionHTML = `
-                <div class="form-control">
+                <div class="form-control" name="SCL90Form">
                     <label id="SCLQuestions${index}">
                         ${question}
                     </label>
                     <label for="choice-0">
-                        <input type="radio" id="choice-0" name="choice">0</input>
+                        <input type="radio" id="choice-0-${index}" name="SCLchoice-${index}">0</input>
                     </label>
                     <label for="choice-1">
-                        <input type="radio" id="choice-1" name="choice">1</input>
+                        <input type="radio" id="choice-1-${index}" name="SCLchoice-${index}">1</input>
                     </label>
                     <label for="choice-2">
-                        <input type="radio" id="choice-2" name="choice">2</input>
+                        <input type="radio" id="choice-2-${index}" name="SCLchoice-${index}">2</input>
                     </label>
                     <label for="choice-3">
-                        <input type="radio" id="choice-3" name="choice">3</input>
+                        <input type="radio" id="choice-3-${index}" name="SCLchoice-${index}">3</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">4</input>
+                        <input type="radio" id="choice-4-${index}" name="SCLchoice-${index}">4</input>
                     </label>
                 </div>
             `;
@@ -288,52 +288,55 @@
 
         SPSRQQuestionsMatrix.forEach(function(question, index) {
             var questionHTML = `
-                <div class="form-control">
+                <div class="form-control" name = "SPSRQForm">
                     <label id="SPSRQQuestions${index}">
                         ${question}
                     </label>
                     <label for="choice-0">
-                        <input type="radio" id="choice-yes" name="choice">yes</input>
+                        <input type="radio" id="choice-yes-${index}" name="SPSRQchoice-${index}">yes</input>
                     </label>
                     <label for="choice-1">
-                        <input type="radio" id="choice-no" name="choice">no</input>
+                        <input type="radio" id="choice-no-${index}" name="SPSRQchoice-${index}">no</input>
                 </div>
             `;
             document.getElementById('SPSRQID').innerHTML += questionHTML;
+
+
         });
 
         var MFQprompt1HTML = 
-            `<h3>How often do these present a problem to you?</h3><p> </p>
-            <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
+            `<h3>How is your memory compared to the way it was...</h3><p> </p>
+            <p style = "word-spacing: 40px"><strong>much worse same much better</strong></p>
             <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+
         document.getElementById('MFQID').innerHTML += MFQprompt1HTML
 
         MFQQuestionsMatrix1.forEach(function(question, index) {
             var questionHTML = `
-                <div class="form-control">
+                <div class="form-control" name = "MFQForm1">
                     <label id="MFQQuestions${index}">
                         ${question}
                     </label>
                     <label for="choice-0">
-                        <input type="radio" id="choice-0" name="choice">1</input>
+                        <input type="radio" id="1choice-0-${index}" name="MFQchoice1-${index}">1</input>
                     </label>
                     <label for="choice-1">
-                        <input type="radio" id="choice-1" name="choice">2</input>
+                        <input type="radio" id="1choice-1-${index}" name="MFQchoice1-${index}">2</input>
                     </label>
                     <label for="choice-2">
-                        <input type="radio" id="choice-2" name="choice">3</input>
+                        <input type="radio" id="1choice-2-${index}" name="MFQchoice1-${index}">3</input>
                     </label>
                     <label for="choice-3">
-                        <input type="radio" id="choice-3" name="choice">4</input>
+                        <input type="radio" id="1choice-3-${index}" name="MFQchoice1-${index}">4</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">5</input>
+                        <input type="radio" id="1choice-4-${index}" name="MFQchoice1-${index}">5</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">6</input>
+                        <input type="radio" id="1choice-5-${index}" name="MFQchoice1-${index}">6</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">7</input>
+                        <input type="radio" id="1choice-6-${index}" name="MFQchoice1-${index}">7</input>
                     </label>
                 </div>
             `;
@@ -341,39 +344,38 @@
         });
 
         var MFQprompt2HTML = 
-            `<hr />
-            <h3>As you are reading a novel, how often do you have trouble remembering what you have read...</h3><p> </p>
+            `<hr /><h3>How often do remembering these present a problem to you?</h3><p> </p>
             <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
-            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />
-            `
+            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+
         document.getElementById('MFQID').innerHTML += MFQprompt2HTML
 
         MFQQuestionsMatrix2.forEach(function(question, index) {
             var questionHTML = `
-                <div class="form-control">
+                <div class="form-control" name ="MFQForm2">
                     <label id="MFQQuestions${index}">
                         ${question}
                     </label>
                     <label for="choice-0">
-                        <input type="radio" id="choice-0" name="choice">1</input>
+                        <input type="radio" id="2choice-0-${index}" name="MFQchoice2-${index}">1</input>
                     </label>
                     <label for="choice-1">
-                        <input type="radio" id="choice-1" name="choice">2</input>
+                        <input type="radio" id="2choice-1-${index}" name="MFQchoice2-${index}">2</input>
                     </label>
                     <label for="choice-2">
-                        <input type="radio" id="choice-2" name="choice">3</input>
+                        <input type="radio" id="2choice-2-${index}" name="MFQchoice2-${index}">3</input>
                     </label>
                     <label for="choice-3">
-                        <input type="radio" id="choice-3" name="choice">4</input>
+                        <input type="radio" id="2choice-3-${index}" name="MFQchoice2-${index}">4</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">5</input>
+                        <input type="radio" id="2choice-4-${index}" name="MFQchoice2-${index}">5</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">6</input>
+                        <input type="radio" id="2choice-5-${index}" name="MFQchoice2-${index}">6</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">7</input>
+                        <input type="radio" id="2choice-6-${index}" name="MFQchoice2-${index}">7</input>
                     </label>
                 </div>
             `;
@@ -381,38 +383,39 @@
         });
 
         var MFQprompt3HTML = 
-            `<hr /><h3>When you are reading a newspaper or magazine article, 
-            how often do you have trouble remembering what you have read...</h3><p> </p>
+            `<hr />
+            <h3>As you are reading a novel, how often do you have trouble remembering what you have read...</h3><p> </p>
             <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
-            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+            <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />
+            `
         document.getElementById('MFQID').innerHTML += MFQprompt3HTML
 
         MFQQuestionsMatrix3.forEach(function(question, index) {
             var questionHTML = `
-                <div class="form-control">
+                <div class="form-control" name="MFQForm3">
                     <label id="MFQQuestions${index}">
                         ${question}
                     </label>
                     <label for="choice-0">
-                        <input type="radio" id="choice-0" name="choice">1</input>
+                        <input type="radio" id="3choice-0-${index}" name="MFQchoice3-${index}">1</input>
                     </label>
                     <label for="choice-1">
-                        <input type="radio" id="choice-1" name="choice">2</input>
+                        <input type="radio" id="3choice-1-${index}" name="MFQchoice3-${index}">2</input>
                     </label>
                     <label for="choice-2">
-                        <input type="radio" id="choice-2" name="choice">3</input>
+                        <input type="radio" id="3choice-2-${index}" name="MFQchoice3-${index}">3</input>
                     </label>
                     <label for="choice-3">
-                        <input type="radio" id="choice-3" name="choice">4</input>
+                        <input type="radio" id="3choice-3-${index}" name="MFQchoice3-${index}">4</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">5</input>
+                        <input type="radio" id="3choice-4-${index}" name="MFQchoice3-${index}">5</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">6</input>
+                        <input type="radio" id="3choice-5-${index}" name="MFQchoice3-${index}">6</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">7</input>
+                        <input type="radio" id="3choice-6-${index}" name="MFQchoice3-${index}">7</input>
                     </label>
                 </div>
             `;
@@ -420,37 +423,39 @@
         });
 
         var MFQprompt4HTML = 
-            `<hr /><h3>How well do you remember things that occurred...</h3><p> </p>
-            <p style = "word-spacing: 30px"><strong>very bad fair very good</strong></p>
+            `<hr /><h3>When you are reading a newspaper or magazine article, 
+            how often do you have trouble remembering what you have read...</h3><p> </p>
+            <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
             <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
+
         document.getElementById('MFQID').innerHTML += MFQprompt4HTML
 
         MFQQuestionsMatrix4.forEach(function(question, index) {
             var questionHTML = `
-                <div class="form-control">
+                <div class="form-control" name="MFQForm4">
                     <label id="MFQQuestions${index}">
                         ${question}
                     </label>
                     <label for="choice-0">
-                        <input type="radio" id="choice-0" name="choice">1</input>
+                        <input type="radio" id="4choice-0-${index}" name="MFQchoice4-${index}">1</input>
                     </label>
                     <label for="choice-1">
-                        <input type="radio" id="choice-1" name="choice">2</input>
+                        <input type="radio" id="4choice-1-${index}" name="MFQchoice4-${index}">2</input>
                     </label>
                     <label for="choice-2">
-                        <input type="radio" id="choice-2" name="choice">3</input>
+                        <input type="radio" id="4choice-2-${index}" name="MFQchoice4-${index}">3</input>
                     </label>
                     <label for="choice-3">
-                        <input type="radio" id="choice-3" name="choice">4</input>
+                        <input type="radio" id="4choice-3-${index}" name="MFQchoice4-${index}">4</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">5</input>
+                        <input type="radio" id="4choice-4-${index}" name="MFQchoice4-${index}">5</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">6</input>
+                        <input type="radio" id="4choice-5-${index}" name="MFQchoice4-${index}">6</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">7</input>
+                        <input type="radio" id="4choice-6-${index}" name="MFQchoice4-${index}">7</input>
                     </label>
                 </div>
             `;
@@ -458,84 +463,81 @@
         });
 
         var MFQprompt5HTML = 
-            `<hr /><h3>How often do these present a problem to you?</h3><p> </p>
-            <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
+            `<hr /><h3>How well do you remember things which occurred...</h3><p> </p>
+            <p style = "word-spacing: 30px"><strong>very bad fair very good</strong></p>
             <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
         document.getElementById('MFQID').innerHTML += MFQprompt5HTML
 
-
         MFQQuestionsMatrix5.forEach(function(question, index) {
             var questionHTML = `
-                <div class="form-control">
+                <div class="form-control" name="MFQForm5">
                     <label id="MFQQuestions${index}">
                         ${question}
                     </label>
                     <label for="choice-0">
-                        <input type="radio" id="choice-0" name="choice">1</input>
+                        <input type="radio" id="5choice-0-${index}" name="MFQchoice5-${index}">1</input>
                     </label>
                     <label for="choice-1">
-                        <input type="radio" id="choice-1" name="choice">2</input>
+                        <input type="radio" id="5choice-1-${index}" name="MFQchoice5-${index}">2</input>
                     </label>
                     <label for="choice-2">
-                        <input type="radio" id="choice-2" name="choice">3</input>
+                        <input type="radio" id="5choice-2-${index}" name="MFQchoice5-${index}">3</input>
                     </label>
                     <label for="choice-3">
-                        <input type="radio" id="choice-3" name="choice">4</input>
+                        <input type="radio" id="5choice-3-${index}" name="MFQchoice5-${index}">4</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">5</input>
+                        <input type="radio" id="5choice-4-${index}" name="MFQchoice5-${index}">5</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">6</input>
+                        <input type="radio" id="5choice-5-${index}" name="MFQchoice5-${index}">6</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">7</input>
+                        <input type="radio" id="5choice-6-${index}" name="MFQchoice5-${index}">7</input>
                     </label>
                 </div>
             `;
             document.getElementById('MFQID').innerHTML += questionHTML;
         });
 
-
         var MFQprompt6HTML = 
-            `<hr /><h3>How is your memory compared to the way it was...</h3><p> </p>
-            <p style = "word-spacing: 40px"><strong>much worse same much better</strong></p>
+            `<hr /><h3>When you actually forget in these situations, how serious of a problem
+                would it be to forget these?</h3><p> </p>
+            <p style = "word-spacing: 20px"><strong>major problems some minor problems no problems</strong></p>
             <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
         document.getElementById('MFQID').innerHTML += MFQprompt6HTML
 
-
         MFQQuestionsMatrix6.forEach(function(question, index) {
             var questionHTML = `
-                <div class="form-control">
+                <div class="form-control" name="MFQForm6">
                     <label id="MFQQuestions${index}">
                         ${question}
                     </label>
                     <label for="choice-0">
-                        <input type="radio" id="choice-0" name="choice">1</input>
+                        <input type="radio" id="6choice-0-${index}" name="MFQchoice6-${index}">1</input>
                     </label>
                     <label for="choice-1">
-                        <input type="radio" id="choice-1" name="choice">2</input>
+                        <input type="radio" id="6choice-1-${index}" name="MFQchoice6-${index}">2</input>
                     </label>
                     <label for="choice-2">
-                        <input type="radio" id="choice-2" name="choice">3</input>
+                        <input type="radio" id="6choice-2-${index}" name="MFQchoice6-${index}">3</input>
                     </label>
                     <label for="choice-3">
-                        <input type="radio" id="choice-3" name="choice">4</input>
+                        <input type="radio" id="6choice-3-${index}" name="MFQchoice6-${index}">4</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">5</input>
+                        <input type="radio" id="6choice-4-${index}" name="MFQchoice6-${index}">5</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">6</input>
+                        <input type="radio" id="6choice-5-${index}" name="MFQchoice6-${index}">6</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">7</input>
+                        <input type="radio" id="6choice-6-${index}" name="MFQchoice6-${index}">7</input>
                     </label>
                 </div>
             `;
             document.getElementById('MFQID').innerHTML += questionHTML;
         });
-
 
         var MFQprompt7HTML = 
             `<hr /><h3>How often do you use these techniques to remind yourself about things?</h3><p> </p>
@@ -543,33 +545,32 @@
             <p style = "word-spacing: 65px">1 2 3 4 5 6 7</p><hr />`
         document.getElementById('MFQID').innerHTML += MFQprompt7HTML
 
-
         MFQQuestionsMatrix7.forEach(function(question, index) {
             var questionHTML = `
-                <div class="form-control">
+                <div class="form-control" name="MFQForm7">
                     <label id="MFQQuestions${index}">
                         ${question}
                     </label>
                     <label for="choice-0">
-                        <input type="radio" id="choice-0" name="choice">1</input>
+                        <input type="radio" id="7choice-0-${index}" name="MFQchoice7-${index}">1</input>
                     </label>
                     <label for="choice-1">
-                        <input type="radio" id="choice-1" name="choice">2</input>
+                        <input type="radio" id="7choice-1-${index}" name="MFQchoice7-${index}">2</input>
                     </label>
                     <label for="choice-2">
-                        <input type="radio" id="choice-2" name="choice">3</input>
+                        <input type="radio" id="7choice-2-${index}" name="MFQchoice7-${index}">3</input>
                     </label>
                     <label for="choice-3">
-                        <input type="radio" id="choice-3" name="choice">4</input>
+                        <input type="radio" id="7choice-3-${index}" name="MFQchoice7-${index}">4</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">5</input>
+                        <input type="radio" id="7choice-4-${index}" name="MFQchoice7-${index}">5</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">6</input>
+                        <input type="radio" id="7choice-5-${index}" name="MFQchoice7-${index}">6</input>
                     </label>
                     <label for="choice-4">
-                        <input type="radio" id="choice-4" name="choice">7</input>
+                        <input type="radio" id="7choice-6-${index}" name="MFQchoice7-${index}">7</input>
                     </label>
                 </div>
             `;
@@ -608,7 +609,7 @@
                         <input type="radio" id="choice-1" name="choice">(2) Rarely True</input>
                     </label>
                     <label for="choice-2">
-                        <input type="radio" id="choice-2" name="choice">(3)S ometimes True</input>
+                        <input type="radio" id="choice-2" name="choice">(3) Sometimes True</input>
                     </label>
                     <label for="choice-3">
                         <input type="radio" id="choice-3" name="choice">(4) Often True</input>
@@ -759,9 +760,105 @@
             x[0].style.display = "block"
         }
 
+        var SurveyAnswers = {
+            SCL90: [],
+            SPSRQ: [],
+            MFQ: []
+        }
 
         // This is where things get complicated but essentially is programming the next button
         function nextPrev() {
+
+            if (currentTab == 1){
+                var SCL90List = document.getElementsByName("SCL90Form")
+                var SCL90Choices = document.getElementsByName("SCLchoice-1")
+                for (i=0;i<SCL90List.length;i++) {
+                    for (j=0;j<SCL90Choices.length;j++) {
+                        if (document.getElementsByName(`SCLchoice-${i}`)[j].checked) {
+                            SurveyAnswers.SCL90[i] = j
+                }}}
+            }
+
+            if (currentTab == 2){
+                var SPSRQList = document.getElementsByName("SPSRQForm")
+                var SPSRQChoices = document.getElementsByName("SPSRQchoice-1")
+                for (i=0;i<SPSRQList.length;i++) {
+                    for (j=0;j<SPSRQChoices.length;j++) {
+                        if (document.getElementsByName(`SPSRQchoice-${i}`)[j].checked) {
+                            if (j == 0) {var ynIndex = 1} else {var ynIndex = 0}
+                            SurveyAnswers.SPSRQ[i] = ynIndex
+                }}}
+            }
+
+            if (currentTab == 3){
+                var MFQList1 = document.getElementsByName("MFQForm1")
+                var MFQChoices1 = document.getElementsByName("MFQchoice1-1")
+                for (i=0;i<MFQList1.length;i++) {
+                    for (j=0;j<MFQChoices1.length;j++) {
+                        if (document.getElementsByName(`MFQchoice1-${i}`)[j].checked) {
+                            SurveyAnswers.MFQ[i] = j + 1
+                }}}
+            }
+
+            if (currentTab == 3){
+                var MFQList2 = document.getElementsByName("MFQForm2")
+                var MFQChoices2 = document.getElementsByName("MFQchoice2-1")
+                for (i=0;i<MFQList2.length;i++) {
+                    for (j=0;j<MFQChoices2.length;j++) {
+                        if (document.getElementsByName(`MFQchoice2-${i}`)[j].checked) {
+                            SurveyAnswers.MFQ[i+MFQChoices1.length] = j + 1
+                }}}
+            }
+
+            if (currentTab == 3){
+                var MFQList3 = document.getElementsByName("MFQForm3")
+                var MFQChoices3 = document.getElementsByName("MFQchoice3-1")
+                for (i=0;i<MFQList3.length;i++) {
+                    for (j=0;j<MFQChoices3.length;j++) {
+                        if (document.getElementsByName(`MFQchoice3-${i}`)[j].checked) {
+                            SurveyAnswers.MFQ[i+MFQChoices1.length+MFQChoices2.length] = j + 1
+                }}}
+            }
+
+            if (currentTab == 3){
+                var MFQList4 = document.getElementsByName("MFQForm4")
+                var MFQChoices4 = document.getElementsByName("MFQchoice4-1")
+                for (i=0;i<MFQList4.length;i++) {
+                    for (j=0;j<MFQChoices4.length;j++) {
+                        if (document.getElementsByName(`MFQchoice4-${i}`)[j].checked) {
+                            SurveyAnswers.MFQ[i+MFQChoices1.length+MFQChoices2.length+MFQChoices3.length] = j + 1
+                }}}
+            }
+
+            if (currentTab == 3){
+                var MFQList5 = document.getElementsByName("MFQForm5")
+                var MFQChoices5 = document.getElementsByName("MFQchoice5-1")
+                for (i=0;i<MFQList5.length;i++) {
+                    for (j=0;j<MFQChoices5.length;j++) {
+                        if (document.getElementsByName(`MFQchoice5-${i}`)[j].checked) {
+                            SurveyAnswers.MFQ[i+MFQChoices1.length+MFQChoices2.length+MFQChoices3.length+MFQChoices4.length] = j + 1
+                }}}
+            }
+
+            if (currentTab == 3){
+                var MFQList6 = document.getElementsByName("MFQForm6")
+                var MFQChoices6 = document.getElementsByName("MFQchoice6-1")
+                for (i=0;i<MFQList6.length;i++) {
+                    for (j=0;j<MFQChoices6.length;j++) {
+                        if (document.getElementsByName(`MFQchoice6-${i}`)[j].checked) {
+                            SurveyAnswers.MFQ[i+MFQChoices1.length+MFQChoices2.length+MFQChoices3.length+MFQChoices4.length+MFQChoices5.length] = j + 1
+                }}}
+            }
+
+            if (currentTab == 3){
+                var MFQList7 = document.getElementsByName("MFQForm7")
+                var MFQChoices7 = document.getElementsByName("MFQchoice7-1")
+                for (i=0;i<MFQList7.length;i++) {
+                    for (j=0;j<MFQChoices7.length;j++) {
+                        if (document.getElementsByName(`MFQchoice7-${i}`)[j].checked) {
+                            SurveyAnswers.MFQ[i+MFQChoices1.length+MFQChoices2.length+MFQChoices3.length+MFQChoices4.length+MFQChoices5.length+MFQChoices6.length] = j + 1
+                }}}
+            }
             var x = document.getElementsByClassName("tab");
 
             // Remove current tab when calling next
@@ -795,10 +892,17 @@
                 document.getElementsByClassName("ThankYou")[0].style.display = "block"
                 document.getElementsByClassName("Next")[0].style.display="none"
             }
+
+
         }
+
+
+
+
 
     </script>
 </body>
+
 
 
 </html>
